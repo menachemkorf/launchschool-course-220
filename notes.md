@@ -140,8 +140,10 @@ function walk(node, callback) {
 - element.insertAdjacentText(position, text)
     - position can be "beforebegin", "afterbegin", "beforeend", "afterend"
 
+### remove nodes
 
-
+- node.remove()
+- parent.removeChild(node)
 
 ## Adding Event Listeners
 
