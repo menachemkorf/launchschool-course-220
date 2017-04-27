@@ -51,15 +51,6 @@ $(function() {
 
     $(this).find(".success").toggle(isValid);
     $(this).find(".error").toggle(!isValid);
-
-    // if (total % 10 == 0) {
-    //   $(this).find(".success").show();
-    //   $(this).find(".error").hide();
-    // }
-    // else {
-    //   $(this).find(".error").show();
-    //   $(this).find(".success").hide();
-    // }
   });
 
   $("ul a").on("click", function(e) {
