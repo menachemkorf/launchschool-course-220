@@ -1,0 +1,68 @@
+body {
+  font: normal 14px Helvetica, Arial, sans-serif;
+  background-color: #780E24;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+#page {
+  width: 802px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #fff;
+}
+
+#canvas {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border: 1px solid #cccccc;
+  background: linear-gradient(to bottom, #fff 0%, #0066cc 100%);
+}
+
+dl {
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+dt {
+  padding: 0 0 5px 0;
+}
+
+dd {
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+input[type="number"] {
+  padding: 5px 0 5px 5px;
+  width: 70px;
+  height: 30px;
+  font: normal 14px/100% Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+#canvas > div {
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background-color: #dde338;
+}
+
+#canvas .circle {
+  border-radius: 100%;
+}
+
+#canvas .star {
+  background: transparent url('../images/star.png') 0 0 no-repeat;
+  background-size: 100% auto;
+}
