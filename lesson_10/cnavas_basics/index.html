@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Basics</title>
+  <style type="text/css">
+  canvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #000;
+  }
+  </style>
+</head>
+<body>
+<canvas width="800" height="800";></canvas>
+
+<img src="https://www.google.com/images/srpr/logo11w.png" />
+
+<script type="text/javascript">
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+
+var img = document.querySelector('img');
+
+// We'll change the canvas width and height to match the image width and height
+canvas.width = img.width;
+canvas.height = img.height;
+
+ctx.drawImage(img, 0, 0);
+
+// var x = canvas.width / 2;
+// var y = canvas.height / 2;
+// var radius = x;
+
+// ctx.beginPath();
+// // circle fill
+// ctx.arc(x, y, radius, 0, 2 * Math.PI);
+// ctx.fill();
+
+// triangle outline
+// ctx.strokeStyle = 'rgba(0, 102, 204, .7)';
+// ctx.moveTo(x, y - 50);
+// ctx.lineTo(x + 50, y);
+// ctx.lineTo(x - 50, y);
+// ctx.lineTo(x , y - 50);
+// ctx.stroke();
+// ctx.closePath();
+
+// var imgSrc = canvas.toDataURL('png');
+// var img = document.createElement('img');
+
+// img.src = imgSrc;
+// document.body.appendChild(img);
+</script>
+</body>
+</html>

@@ -17,7 +17,6 @@ $(function() {
   showActiveTab(tab);
   colorBody(color);
   $('[value="'+ color +'"]').prop('checked', true);
-  // console.log($('input[value="'+ color +'"]'));
   $('textarea').val(note);
 
   $('nav').on('click', 'a', function(e) {
