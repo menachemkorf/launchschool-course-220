@@ -166,6 +166,17 @@ Attaching a single event handler at a higher location in the DOM is called event
 
 
 
+## Constructor Method
+`getPrototypeOf()` === the object it inherits from/deligates to.
+`constructor`      === the constuctor function that created it.
+
+if we use `var foo = Object.create(obj)`:
+  `Object.getPrototypeOf(foo)` will return `obj`
+
+if we use `var foo = new Func()`:
+  `Object.getPrototypeOf(foo)` will return `Func.prototype`,
+  and `foo.constructor` === `Func`.
+
 
 
 
