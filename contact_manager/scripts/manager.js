@@ -2,10 +2,9 @@ var manager = {
   collection: [],
   templates: {},
   Tags: function() {
-    this.family = false;
-    this.work = false;
-    this.friends = false;
-    this.charity = false;
+    this.marketing = false;
+    this.sales = false;
+    this.engineering = false;
     this.other = false;
   },
   getTemplates: function() {
