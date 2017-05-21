@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Manager</title>
+  <link rel="stylesheet" type="text/css" href="styles/contacts.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </header>
+  <main></main>
+  <footer>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </footer>
+
+  <script type="text/x-handlebars" id="mainTemplate">
+    <header>
+      <a href="" class="button add">Add Contact</a>
+      <div class="filter">
+      <label>Filter by tags:
+        <select id="filter">
+          <option value="all">all</option>
+            {{#each filterTags}}
+            <option value="{{@key}}">{{@key}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <input type="text" name="" id="search" placeholder="Seach">
+      </div>
+    </header>
+    {{#if contacts}}
+    <ul id="contacts">
+    {{#each contacts}}
+      <li data-contact-id="{{id}}">
+        <h3>{{name}}</h3>
+        <dl>
+          <dt>Phone Number</dt>
+          <dd>{{phone}}</dd>
+          <dt>Email</dt>
+          <dd>{{email}}</dd>
+        </dl>
+        <div class="tags">
+        {{#each tags}}
+        {{#if .}}
+        <span>{{@key}}</span>
+        {{/if}}
+        {{/each}}
+        </div>
+        <div class="actions">
+          <a href="#" class="button edit">Edit</a>
+          <a href="#" class="button delete">Delete</a>
+        </div>
+      </li>
+    {{/each}}
+    </ul>
+    {{else}}
+    <div id="empty">
+      <h2>There is no contacts.</h2>
+      <p><a href="" class="button add">Add Contact</a></p>
+    </div>
+    {{/if}}
+  </script>
+
+  <script type="text/x-handlebars" id="formTemplate">
+    <form action="" method="post">
+      <h2>Create Contact</h2>
+      <fieldset>
+        <input type="hidden" name="id" value="{{id}}">
+        <dl>
+          <dt><label for="name">Full name:</label></dt>
+          <dd><input type="text" name="name" id="name" value="{{name}}" required></dd>
+        </dl>
+        <dl>
+          <dt><label for="email">Email address:</label></dt>
+          <dd><input type="email" name="email" id="email" value="{{email}}" required></dd>
+        </dl>
+        <dl>
+          <dt><label for="phone">Phone number:</label></dt>
+          <dd><input type="text" name="phone" id="phone" value="{{phone}}" required></dd>
+        </dl>
+        <dl class="checkboxes">
+          <dt>Tags:</dt>
+          <dd>
+            {{#each tags}}
+            <label>{{@key}}
+              <input type="checkbox" name="{{@key}}" id="tag-{{@key}}"
+              {{#if .}}
+              checked
+              {{/if}}
+              >
+            </label>
+            {{/each}}
+          </dd>
+        </dl>
+        <div class="actions">
+          <input type="submit" class="button" name="">
+          <input type="button" class="button" name="" id="cancel" value="Cancel">
+        </div>
+      </fieldset>
+    </form>
+  </script>
+
+  <script type="text/javascript" src="scripts/manager.js"></script>
+</body>
+</html>
